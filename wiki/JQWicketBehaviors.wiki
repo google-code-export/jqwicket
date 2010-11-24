@@ -40,8 +40,24 @@ p.add(new DroppableBehavior());
 add(p);
 }}}
 
+*`ResizableBehavior/ResizableWebMarkupContainer`* ([http://jqueryui.com/demos/resizable/ original javascript version])
 
-  * `ResizableBehavior/ResizableWebMarkupContainer` ([http://jqueryui.com/demos/resizable/ original javascript version])
+Simple resizable:
+{{{
+MyPanel draggableAndResizable = new MyPanel("draggableAndResizable");
+draggableAndResizable .add(JQBehaviors.draggable(), JQBehaviors.resizable());
+add(draggableAndResizable);
+}}}
+
+Resizable with custom options:
+{{{
+final Label resizable = new Label("resizable", "resizable label");
+ResizableOptions options = new ResizableOptions()
+   .animate(true).aspectRatio(true).animateEasing(EffectEasing.EASE_IN_EXPO);
+resizable.add(JQBehaviors.resizable(options));
+add(resizable);
+}}}
+
   * `SelectableBehavior/SelectableWebMarkupContainer` ([http://jqueryui.com/demos/selectable/ original javascript version])
   * `SortableBehavior/SortableWebMarkupContainer` ([http://jqueryui.com/demos/sortable/ original javascript version])
   * `AccordionBehavior/AccordionWebMarkupContainer` ([http://jqueryui.com/demos/accordion/ original javascript version])
