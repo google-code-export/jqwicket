@@ -58,7 +58,16 @@ resizable.add(JQBehaviors.resizable(options));
 add(resizable);
 }}}
 
-  * `SelectableBehavior/SelectableWebMarkupContainer` ([http://jqueryui.com/demos/selectable/ original javascript version])
+*`SelectableBehavior/SelectableWebMarkupContainer`* ([http://jqueryui.com/demos/selectable/ original javascript version])
+
+{{{
+final Label selectable = new Label("selectable", "selectable label");
+SelectableOptions options = new SelectableOptions()
+            .selectingEvent(JQuery.$f("alert(event)", "event", "ui"));
+selectable.add(new SelectableBehavior(options));
+add(selectable);
+}}}
+
   * `SortableBehavior/SortableWebMarkupContainer` ([http://jqueryui.com/demos/sortable/ original javascript version])
   * `AccordionBehavior/AccordionWebMarkupContainer` ([http://jqueryui.com/demos/accordion/ original javascript version])
   * `ButtonBehavior/ButtonWebMarkupContainer` ([http://jqueryui.com/demos/button/ original javascript version])
