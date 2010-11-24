@@ -68,7 +68,27 @@ selectable.add(new SelectableBehavior(options));
 add(selectable);
 }}}
 
-  * `SortableBehavior/SortableWebMarkupContainer` ([http://jqueryui.com/demos/sortable/ original javascript version])
+*`SortableBehavior/SortableWebMarkupContainer`* ([http://jqueryui.com/demos/sortable/ original javascript version])
+
+Java-Code:
+{{{
+add(new WebMarkupContainer("sortable").add(JQBehaviors.sortable()));
+}}}
+
+Html-Template:
+{{{
+<ul wicket:id="sortable">
+	<li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 1</li>
+	<li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 2</li>
+	<li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 3</li>
+	<li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 4</li>
+	<li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 5</li>
+	<li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 6</li>
+	<li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 7</li>
+</ul>
+}}}
+
+
   * `AccordionBehavior/AccordionWebMarkupContainer` ([http://jqueryui.com/demos/accordion/ original javascript version])
   * `ButtonBehavior/ButtonWebMarkupContainer` ([http://jqueryui.com/demos/button/ original javascript version])
   * `DatePickerBehavior/DatePickerWebMarkupContainer` ([http://jqueryui.com/demos/datepicker/ original javascript version])
