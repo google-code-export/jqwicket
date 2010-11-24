@@ -1,5 +1,5 @@
 #labels Phase-Implementation
-<wiki:toc max_depth="1" />
+#sidebar JQWicketBehaviorsTableOfContents
 
 ===JQWicket behaviors/webmarkup containers overview===
 
