@@ -13,6 +13,7 @@ Following jqwicket behaviors/webmarkup containers wrapping existing or external 
   * `DialogBehavior/DialogWebMarkupContainer` ([http://jqueryui.com/demos/dialog/ original javascript version])
   * `ProgressbarBehavior/ProgressbarWebMarkupContainer` ([http://jqueryui.com/demos/progressbar/ original javascript version])
   * `SliderBehavior/SliderWebMarkupContainer` ([http://jqueryui.com/demos/slider/ original javascript version])
+  * `SparklineBehavior/SparklineWebMarkupContainer` ([http://omnipotent.net/jquery.sparkline/ original javascript version])
   * `TabsBehavior/TabsWebMarkupContainer` ([http://jqueryui.com/demos/tabs/ original javascript version])
   * `JCarouselBehavior/JCarouselWebMarkupContainer` ([http://sorgalla.com/projects/jcarousel/ original javascript version])
   * `MaskedInputBehavior/MaskedInputWebMarkupContainer` ([http://digitalbush.com/projects/masked-input-plugin/ original javascript version])
