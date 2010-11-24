@@ -1,0 +1,7 @@
+#labels Phase-Implementation
+Following jqwicket behaviors/webmarkup containers wrapping existing or external jquery plugins are currently implemented:
+  * `DraggableBehavior/DraggableWebMarkupContainer` ([http://jqueryui.com/demos/draggable/ original javascript version])
+  * `DroppableBehavior/DroppableWebMarkupContainer` ([http://jqueryui.com/demos/droppable/ original javascript version])
+  * `ResizableBehavior/ResizableWebMarkupContainer` ([http://jqueryui.com/demos/resizable/ original javascript version])
+  * `SelectableBehavior/SelectableWebMarkupContainer` ([http://jqueryui.com/demos/selectable/ original javascript version])
+  * `SortableBehavior/SortableWebMarkupContainer` ([http://jqueryui.com/demos/sortable/ original javascript version])
