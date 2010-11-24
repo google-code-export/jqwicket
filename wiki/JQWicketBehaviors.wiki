@@ -1,6 +1,4 @@
 #labels Phase-Implementation
-#sidebar JQWicketBehaviorsTableOfContents
-
 ===JQWicket behaviors/webmarkup containers overview===
 
 Following jqwicket behaviors/webmarkup containers wrapping existing or external jquery plugins are currently implemented:
