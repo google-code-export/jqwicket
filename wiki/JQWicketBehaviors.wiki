@@ -33,7 +33,7 @@ p.add(JQBehaviors.droppable());
 add(p);
 }}}
 
-or alternatively by explicitly defining DroppableBehavior:
+or alternatively by explicitly instantiating DroppableBehavior:
 {{{
 MyPanel p = new MyPanel(....);
 p.add(new DroppableBehavior());
