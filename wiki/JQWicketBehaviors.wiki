@@ -1,4 +1,4 @@
-#labels Phase-Implementation
+#labels Phase-Implementation,Featured
 ===JQWicket behaviors/webmarkup containers overview===
 
 Following jqwicket behaviors/webmarkup containers wrapping existing or external jquery plugins are currently implemented:
