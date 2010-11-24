@@ -2,8 +2,45 @@
 ===JQWicket behaviors/webmarkup containers overview===
 
 Following jqwicket behaviors/webmarkup containers wrapping existing or external jquery plugins are currently implemented:
-  * `DraggableBehavior/DraggableWebMarkupContainer` ([http://jqueryui.com/demos/draggable/ original javascript version])
-  * `DroppableBehavior/DroppableWebMarkupContainer` ([http://jqueryui.com/demos/droppable/ original javascript version])
+
+*`DraggableBehavior/DraggableWebMarkupContainer`* ([http://jqueryui.com/demos/draggable/ original javascript version])
+
+Examples:
+
+Simple draggable label:
+{{{
+Label draggable = new Label("draggable", "i'm a draggable label");
+draggable.add(JQBehaviors.draggable());
+add(draggable);
+}}}
+
+Draggable label with the javascript callback function:
+{{{
+final Label draggable = new Label("draggable", "i'm a draggable label");
+DraggableOptions options = new DraggableOptions()
+       .dragEvent(JQuery.$(draggable).css("color", "red"));
+draggable.add(JQBehaviors.draggable(options));
+add(draggable);
+}}}
+
+
+*`DroppableBehavior/DroppableWebMarkupContainer`* ([http://jqueryui.com/demos/droppable/ original javascript version])
+
+Simple droppable panel:
+{{{
+MyPanel p = new MyPanel(....);
+p.add(JQBehaviors.droppable());
+add(p);
+}}}
+
+or alternatively by explicitly defining DroppableBehavior:
+{{{
+MyPanel p = new MyPanel(....);
+p.add(new DroppableBehavior());
+add(p);
+}}}
+
+
   * `ResizableBehavior/ResizableWebMarkupContainer` ([http://jqueryui.com/demos/resizable/ original javascript version])
   * `SelectableBehavior/SelectableWebMarkupContainer` ([http://jqueryui.com/demos/selectable/ original javascript version])
   * `SortableBehavior/SortableWebMarkupContainer` ([http://jqueryui.com/demos/sortable/ original javascript version])
