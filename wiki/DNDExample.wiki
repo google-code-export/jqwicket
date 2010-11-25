@@ -18,8 +18,7 @@ public class DNDPage extends WebPage {
 	public DNDPage() {
 
 		// Create accordion containing dummy products
-		AccordionWebMarkupContainer accordion = new AccordionWebMarkupContainer(
-				"catalog");
+		AccordionWebMarkupContainer accordion = new AccordionWebMarkupContainer(				"catalog");
 		for (Map.Entry<String, String> e : labels.entrySet()) {
 			accordion.add(new Label(e.getKey(), e.getValue())
 					.add(JQBehaviors.draggable(new DraggableOptions().appendTo(
@@ -29,8 +28,7 @@ public class DNDPage extends WebPage {
 
 		
 		// Create shopping cart webmarkup container
-		WebMarkupContainer cartContainer = new WebMarkupContainer(
-				"cartContainer");
+		WebMarkupContainer cartContainer = new WebMarkupContainer(				"cartContainer");
 		add(cartContainer);
 
 		// added ajax behavior to the shopping cart that responds to the page with simple javascript alert 
@@ -39,8 +37,7 @@ public class DNDPage extends WebPage {
 
 			@Override
 			protected void respond(AjaxRequestTarget target) {
-				String product = RequestCycle.get().getRequest()
-						.getParameter("product");
+				String product = RequestCycle.get().getRequest()						.getParameter("product");
 				if (Utils.isNotBlank(product))
 					target.appendJavascript("alert('product \"" + product
 							+ "\" added on the serverside!')");
