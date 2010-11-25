@@ -108,7 +108,7 @@ Html-Template:
 Java-Code:
 {{{
 add(new UploadifyWebMarkupContainer("file_upload",
-	new UploadifyOptions().script("/myapp/_up")						.scriptAccess("always").auto(true).multi(true)));
+	new UploadifyOptions().script("/myapp/_up").scriptAccess("always").auto(true).multi(true)));
 }}}
 
 HTML-Template:
@@ -175,8 +175,7 @@ public class UploadifyServlet extends HttpServlet {
 			for (FileItem item : items) {
 				if (item.getName() == null)
 					continue;
-				File targetFolder = new File(
-						System.getProperty("java.io.tmpdir"), "uploadify");
+				File targetFolder = new File(System.getProperty("java.io.tmpdir"), "uploadify");
 				if (!targetFolder.exists())
 					targetFolder.mkdirs();
 				item.write(new File(targetFolder, item.getName()));
