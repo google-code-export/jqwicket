@@ -148,7 +148,7 @@ $(document).ready(function(){
 </html>
 }}}
 
-Note: You have to implement the endpoint on the serverside ("myapp/_up" in example) for handling multipart requests sent by uploadify. Find enclosed dummy servlet implementation for handling uploaded files.
+Note: You have to implement the endpoint on the serverside ("`myapp/_up`" in example) for handling multipart requests sent by uploadify. Find enclosed dummy servlet implementation for handling uploaded files.
 {{{
 import java.io.File;
 import java.io.IOException;
