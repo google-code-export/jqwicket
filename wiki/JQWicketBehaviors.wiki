@@ -102,4 +102,90 @@ Html-Template:
   * `NivoSliderBehavior/NivoSliderWebMarkupContainer` ([http://nivo.dev7studios.com original javascript version])
   * `NotifierBehavior/NotifierWebMarkupContainer` ([http://www.erichynds.com/jquery/a-jquery-ui-growl-ubuntu-notification-widget/ original javascript version])
   * `UniformBehavior/UniformWebMarkupContainer` ([http://pixelmatrixdesign.com/uniform/ original javascript version])
-  * `UploadifyBehavior/UploadifyWebMarkupContainer` ([http://www.uploadify.com original javascript version])
+
+*`UploadifyBehavior/UploadifyWebMarkupContainer`* ([http://www.uploadify.com original javascript version])
+
+Java-Code:
+{{{
+add(new UploadifyWebMarkupContainer("file_upload",
+	new UploadifyOptions().script("/myapp/_up")						.scriptAccess("always").auto(true).multi(true)));
+}}}
+
+HTML-Template:
+{{{
+<input wicket:id="file_upload" name="file_upload" type="file" />
+}}}
+
+Rendered HTML-Code:
+{{{
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.6/jquery-ui.min.js"></script>
+<link rel="stylesheet" type="text/css" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.6/themes/base/jquery-ui.css" />
+<script type="text/javascript" src="resources/net.javaforge.jqwicket.ui.uploadify.UploadifyOptions/swfobject.js"></script>
+<script type="text/javascript" src="resources/net.javaforge.jqwicket.ui.uploadify.UploadifyOptions/jquery.uploadify.v2.1.4.min.js"></script>
+<link rel="stylesheet" type="text/css" href="resources/net.javaforge.jqwicket.ui.uploadify.UploadifyOptions/uploadify.css" />
+<script type="text/javascript" id="015e9c19-de54-402c-8ce4-93a29d054dbc"><!--/*--><![CDATA[/*><!--*/
+$(document).ready(function(){
+	$('#file__upload1').uploadify({
+		script:'/myapp/_up', 
+		scriptAccess:'always', 
+		auto:true, 
+		multi:true, 
+		uploader:'resources/net.javaforge.jqwicket.ui.uploadify.UploadifyOptions/uploadify.swf', 
+		expressInstall:'resources/net.javaforge.jqwicket.ui.uploadify.UploadifyOptions/expressInstall.swf', 
+		cancelImg:'resources/net.javaforge.jqwicket.ui.uploadify.UploadifyOptions/cancel.png'
+	});
+});
+/*-->]]>*/</script>
+</head>
+<body> 
+	<input name="file_upload" type="file" id="file__upload1"/>
+</body>
+</html>
+}}}
+
+Note: You have to implement the endpoint on the serverside ('myapp/_up' in example) for handling multipart requests sent by uploadify. Find enclosed dummy servlet implementation for handling uploaded files.
+{{{
+import java.io.File;
+import java.io.IOException;
+import java.util.List;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import org.apache.wicket.util.upload.DiskFileItemFactory;
+import org.apache.wicket.util.upload.FileItem;
+import org.apache.wicket.util.upload.ServletFileUpload;
+
+public class UploadifyServlet extends HttpServlet {
+	@Override
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp)
+			throws ServletException, IOException {
+		if (!ServletFileUpload.isMultipartContent(req)) {
+			return;
+		}
+		try {
+			ServletFileUpload upload = new ServletFileUpload(new DiskFileItemFactory());
+			List<FileItem> items = upload.parseRequest(req);
+			for (FileItem item : items) {
+				if (item.getName() == null)
+					continue;
+				File targetFolder = new File(
+						System.getProperty("java.io.tmpdir"), "uploadify");
+				if (!targetFolder.exists())
+					targetFolder.mkdirs();
+				item.write(new File(targetFolder, item.getName()));
+			}
+			resp.getWriter().println("/myapp/uploadify");
+			resp.getWriter().flush();
+		} catch (Exception e) {
+			throw new RuntimeException(e);
+		}
+	}
+}
+}}} 
