@@ -469,7 +469,8 @@ add(new Link<Void>("tiptip") {
 HTML-Template:
 {{{
 <p>
-Cras sed ante. Phasellus in massa. <a wicket:id="tiptip" title="This will show up in the TipTip popup.">Curabitur dolor eros</a>, gravida et, hendrerit ac, cursus non, massa.
+Cras sed ante. Phasellus in massa. <a wicket:id="tiptip" title="This will show up in the TipTip popup.">Curabitur dolor eros</a>, 
+gravida et, hendrerit ac, cursus non, massa.
 <br/><br/>
 <span id="foo">
 <img src="_images/tiptip/walle.jpg" class="someClass" />
