@@ -1,0 +1,160 @@
+#labels Featured
+#Drag'n'Drop example demonstrating usage of the high level DND API
+
+===Drag'n'Drop example demonstrating usage of the high level DND API===
+
+_DND API will be  available in JQWicket 0.3_
+
+_Note! This example requires JQuery UI javascript library. Please configure JQWicket accordingly_
+
+*1. Create a simple product class*
+
+{{{
+public class Product implements Serializable {
+	public Product(int id, String name) {
+		this.id = id;
+		this.name = name;
+	}
+
+	public int id;
+
+	public String name;
+}
+}}}
+
+*2. Create a Product panel (draggable). `ProductPanel` displays exactly one product*
+
+Java
+{{{
+public class ProductPanel extends DraggablePanel {
+	public ProductPanel(String id, Product p) {
+		super(id, new CompoundPropertyModel<Product>(p));
+		add(new Label("name"));
+	}
+}
+}}}
+
+HTML
+{{{
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:wicket="http://wicket.apache.org/" xml:lang="en" lang="en">
+<body>
+<wicket:panel>
+	<div wicket:id="name" />
+</wicket:panel>
+</body>
+</html>
+}}}
+
+*3. Create a Shopping Cart component (droppable). Note that `ShoppingCartPanel` extends predefined `DroppablePanel` class and implements `onDrop(..)` method.
+
+Java
+{{{
+public class ShoppingCartPanel extends DroppablePanel {
+
+	private List<Product> selectedProducts = new ArrayList<Product>();
+
+	private WebMarkupContainer selectedProductsContainer;
+
+	public ShoppingCartPanel(String id) {
+		super(id);
+		selectedProductsContainer = new WebMarkupContainer(
+				"selectedProductsContainer");
+		selectedProductsContainer.setOutputMarkupId(true);
+		selectedProductsContainer.add(new ListView<Product>(
+				"selectedProductsView", selectedProducts) {
+			@Override
+			protected void populateItem(ListItem<Product> item) {
+				item.add(new Label("name", item.getModelObject().name));
+			}
+		});
+		add(selectedProductsContainer);
+	}
+
+	@Override
+	public void onDrop(AjaxRequestTarget target, DraggablePanel draggable) {
+		selectedProducts.add((Product) draggable.getDefaultModelObject());
+		target.addComponent(selectedProductsContainer);
+	}
+}
+}}}
+
+HTML
+{{{
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:wicket="http://wicket.apache.org/" xml:lang="en" lang="en">
+<body>
+<wicket:panel>
+	<div wicket:id="selectedProductsContainer" >
+		<div wicket:id="selectedProductsView">
+	   		<div wicket:id="name" />
+		</div>
+	</div>
+</wicket:panel>
+</body>
+</html>
+}}}
+
+*4. At least create a wicket page, that displays list of available products and a shopping cart*
+
+Java
+{{{
+public class DND2Page extends WebPage {
+
+	private static final List<Product> products = Arrays.asList(new Product(1,
+			"product 1"), new Product(2, "product 2"), new Product(3,
+			"product 3"), new Product(4, "product 4"), new Product(5,
+			"product 5"), new Product(6, "product 6"), new Product(7,
+			"product 7"), new Product(8, "product 8"));
+
+	public DND2Page() {
+		add(new ListView<Product>("availableProducts", products) {
+			@Override
+			protected void populateItem(ListItem<Product> item) {
+				item.add(new ProductPanel("product", item.getModelObject()));
+			}
+		});
+		add(new ShoppingCartPanel("cart"));
+	}
+}
+}}}
+
+HTML
+{{{
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:wicket="http://wicket.apache.org/" xml:lang="en" lang="en">
+<head>
+<title>Drag'n'Drop Example</title>
+<style type="text/css">
+body {
+	margin: 10px;
+	padding: 0 0 20px;
+	min-height: 100%;
+	font-family: "Arial", "Helvetica", "Verdana", "sans-serif";
+	font-size: 10px;
+}
+</style>
+</head>
+<body>
+<div class="demo"> 
+<div style="float: left; margin-right: 50px;"> 
+ 	<h3>Available products</h3>
+ 	<div wicket:id="availableProducts" >
+ 		<div wicket:id="product" />
+ 	</div>
+</div>
+<div style="float: left;">  
+ 	<h3>Shopping cart</h3>
+	<div wicket:id="cart"  style="width: 300px; min-height: 100px; border: 1px solid black; padding: 10px; overflow: auto;"/>
+</div>
+<div style="clear: both;" />
+</div>
+</body>
+</html>
+}}}
