@@ -7,6 +7,10 @@ _DND API will be  available in JQWicket 0.3_
 
 _Note! This example requires JQuery UI javascript library. Please configure JQWicket accordingly_
 
+
+http://jqwicket.googlecode.com/svn-history/r156/wiki/dnd_highlevel.png
+
+
 *1. Create a simple product class*
 
 {{{
