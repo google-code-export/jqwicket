@@ -3,8 +3,6 @@
 
 ===Drag'n'Drop example demonstrating usage of the high level DND API===
 
-_DND API will be  available in JQWicket 0.3_
-
 _Note! This example requires JQuery UI javascript library. Please configure JQWicket accordingly_
 
 
