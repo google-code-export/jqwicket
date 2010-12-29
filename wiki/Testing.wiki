@@ -1,1 +1,1 @@
-<wiki:gadget url="http://jqwicket.googlecode.com/svn-history/r186/wiki/user-guide-gadget.xml" width="800" height="600" />
+<wiki:gadget url="http://jqwicket.googlecode.com/svn-history/r186/wiki/user-guide-gadget.xml" width="900" height="600" />
