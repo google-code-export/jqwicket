@@ -1,5 +1,7 @@
 ===JQuery UI Selectable as Wicket behavior example===
 
+*[http://jqueryui.com/demos/selectable/ Original javascript version can be found here]*
+
 *Prerequisites:* Your wicket application is configured to use JQWicket as described in the [http://code.google.com/p/jqwicket "Quick Start"] guide. Additionaly to the jquery core library you have to add "jquery ui" to the JQWicket's config.
 
 *Description:* This example demonstrates how to integrate JQuery UI Selectable with wicket components using JQWicket.
@@ -89,3 +91,13 @@ $(document).ready(function(){$('#selectable1').selectable({});});
 }}}
 
 *Note:* Instead of `JQBehaviors.selectable()` you can add an instance of `SelectableBehavior` to the component.
+
+You can also configure selectable behavior by passing appropriate options object to it:
+
+{{{
+final Label selectable = new Label("selectable", "selectable label");
+SelectableOptions options = new SelectableOptions()
+            .selectingEvent(JQuery.$f("alert(event)", "event", "ui"));
+selectable.add(new SelectableBehavior(options));
+add(selectable);
+}}}
