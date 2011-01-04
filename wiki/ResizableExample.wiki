@@ -55,3 +55,13 @@ $(document).ready(function(){$('#resizable1').resizable({});});
 }}}
 
 *Note:* Instead of `JQBehaviors.resizable()` you can add an instance of `ResizableBehavior` to the component.
+
+You can also configure resizable behavior by passing appropriate options object to it:
+
+{{{
+final Label resizable = new Label("resizable", "resizable label");
+ResizableOptions options = new ResizableOptions()
+   .animate(true).aspectRatio(true).animateEasing(EffectEasing.EASE_IN_EXPO);
+resizable.add(JQBehaviors.resizable(options));
+add(resizable);
+}}}
