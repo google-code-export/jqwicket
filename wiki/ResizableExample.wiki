@@ -4,6 +4,8 @@
 
 *Description:* This example demonstrates how to integrate JQuery UI Resizable with wicket components using JQWicket.
 
+*[http://jqueryui.com/demos/resizable/ Original javascript version]*
+
 
 *Java-Code:*
 {{{
