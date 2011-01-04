@@ -1,0 +1,61 @@
+===Generic JQWicket behaviors usage example===
+
+*Prerequisites:* Your wicket application is configured to use JQWicket as described in the [http://code.google.com/p/jqwicket "Quick Start"] guide.
+
+*Description:* This example demonstrates how generic JQWicket behaviors can be used to create javascript enabled wicket components.
+
+
+*Java-Code:*
+{{{
+public class GenericJQBehaviorPage extends WebPage {
+	public GenericJQBehaviorPage() {
+		// add JQBehavior to the page itself
+		add(new JQBehavior("alert('say hello on load from page!')"));
+
+		// add JQBehavior to the label
+		Label label = new Label("label", "Hello world!");
+		label.add(JQBehaviors.mouseClick("alert('clicked!')"));
+		add(label);
+
+	}
+}
+}}}
+
+*Html-Template:*
+{{{
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:wicket="http://wicket.apache.org/" xml:lang="en" lang="en">
+<head>
+<title>Generic JQBehavior page</title>
+</head>
+<body>
+<div class="demo">
+	<span wicket:id="label" />
+</div>
+</body>
+</html>
+}}}
+
+*Rendered Html:*
+{{{
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<title>Generic JQBehavior page</title>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
+<script type="text/javascript" id="b279cc7d-bff2-422f-8f06-94e3109fbd31"><!--/*--><![CDATA[/*><!--*/
+$(document).ready(function(){alert('say hello on load from page!');
+$('#label1').click(function(){alert('clicked!');});});
+/*-->]]>*/</script>
+
+</head>
+<body>
+<div class="demo">
+	<span id="label1">Hello world!</span>
+</div>
+</body>
+</html>
+}}}
