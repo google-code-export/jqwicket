@@ -1,0 +1,47 @@
+#labels example,documentation
+===Basiclow-level jquery integration===
+
+*Prerequisites:* Your wicket application is configured to use JQWicket as described in the [http://code.google.com/p/jqwicket "Quick Start"] guide.
+
+*Description:* This example demonstrates basic usage of JQuery from within the wicket web page.
+
+
+*Java-Code:*
+{{{
+public class JQueryPage extends WebPage {
+	public JQueryPage() {
+		add(JQBehaviors.js("alert('this page uses jquery!')"));
+	}
+}
+}}}
+
+*Html-Template:*
+{{{
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:wicket="http://wicket.apache.org/" xml:lang="en" lang="en">
+<head>
+<title>JQuery example</title>
+</head>
+<body>
+</body>
+</html>
+}}}
+
+*Rendered Html:*
+{{{
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<title>JQuery example</title>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
+<script type="text/javascript" id="49d6ea3c-32cd-49a5-b17d-7502ac8acd75"><!--/*--><![CDATA[/*><!--*/
+$(document).ready(function(){alert('this page uses only jquery!');});
+/*-->]]>*/</script>
+</head>
+<body>
+</body>
+</html>
+}}}
