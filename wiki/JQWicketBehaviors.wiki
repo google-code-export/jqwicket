@@ -6,44 +6,9 @@
   * [ResizableExample JQuery UI Resizable as Wicket behavior example]
   * [SortableExample JQuery UI Sortable as Wicket behavior example]
   * [SelectableExample JQuery UI Selectable as Wicket behavior example]
+  * [DraggableExample JQuery UI Draggable as Wicket behavior example]
+  * [DroppableExample JQuery UI Droppable as Wicket behavior example]
 
-
-*`DraggableBehavior/DraggableWebMarkupContainer`* ([http://jqueryui.com/demos/draggable/ original javascript version])
-
-Examples:
-
-Simple draggable label:
-{{{
-Label draggable = new Label("draggable", "i'm a draggable label");
-draggable.add(JQBehaviors.draggable());
-add(draggable);
-}}}
-
-Draggable label with the javascript callback function:
-{{{
-final Label draggable = new Label("draggable", "i'm a draggable label");
-DraggableOptions options = new DraggableOptions()
-       .dragEvent(JQuery.$(draggable).css("color", "red"));
-draggable.add(JQBehaviors.draggable(options));
-add(draggable);
-}}}
-
-
-*`DroppableBehavior/DroppableWebMarkupContainer`* ([http://jqueryui.com/demos/droppable/ original javascript version])
-
-Simple droppable panel:
-{{{
-MyPanel p = new MyPanel(....);
-p.add(JQBehaviors.droppable());
-add(p);
-}}}
-
-or alternatively by explicitly instantiating `DroppableBehavior`:
-{{{
-MyPanel p = new MyPanel(....);
-p.add(new DroppableBehavior());
-add(p);
-}}}
 
 
 *`AccordionBehavior/AccordionWebMarkupContainer`* ([http://jqueryui.com/demos/accordion/ original javascript version])
