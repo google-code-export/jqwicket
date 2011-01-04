@@ -1,4 +1,4 @@
-===JQuery UI Sortable as Wicket behavior example===
+===JQuery UI Draggable as Wicket behavior example===
 
 *[http://jqueryui.com/demos/draggable/ Original javascript version can be found here]*
 
@@ -22,3 +22,6 @@ DraggableOptions options = new DraggableOptions()
 draggable.add(JQBehaviors.draggable(options));
 add(draggable);
 }}}
+
+
+More complex Drag'n'Drop example [DragDropExample_HighLevel can be found here].
