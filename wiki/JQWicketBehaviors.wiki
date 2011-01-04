@@ -1,7 +1,12 @@
 #labels Phase-Implementation,Featured
 ===JQWicket behaviors/webmarkup containers overview===
 
-Following jqwicket behaviors/webmarkup containers wrapping existing or external jquery plugins are currently implemented:
+  * [BasicJQueryIntegration Basic JQuery/Wicket integration example]
+  * [GenericJQWicketBehaviorsExample Example using generic JQWicket behaviors]
+  * [ResizableExample JQuery UI Resizable as Wicket behavior example]
+  * [SortableExample JQuery UI Sortable as Wicket behavior example]
+  * [SelectableExample JQuery UI Selectable as Wicket behavior example]
+
 
 *`DraggableBehavior/DraggableWebMarkupContainer`* ([http://jqueryui.com/demos/draggable/ original javascript version])
 
@@ -38,54 +43,6 @@ or alternatively by explicitly instantiating `DroppableBehavior`:
 MyPanel p = new MyPanel(....);
 p.add(new DroppableBehavior());
 add(p);
-}}}
-
-*`ResizableBehavior/ResizableWebMarkupContainer`* ([http://jqueryui.com/demos/resizable/ original javascript version])
-
-Simple resizable:
-{{{
-MyPanel draggableAndResizable = new MyPanel("draggableAndResizable");
-draggableAndResizable .add(JQBehaviors.draggable(), JQBehaviors.resizable());
-add(draggableAndResizable);
-}}}
-
-Resizable with custom options:
-{{{
-final Label resizable = new Label("resizable", "resizable label");
-ResizableOptions options = new ResizableOptions()
-   .animate(true).aspectRatio(true).animateEasing(EffectEasing.EASE_IN_EXPO);
-resizable.add(JQBehaviors.resizable(options));
-add(resizable);
-}}}
-
-*`SelectableBehavior/SelectableWebMarkupContainer`* ([http://jqueryui.com/demos/selectable/ original javascript version])
-
-{{{
-final Label selectable = new Label("selectable", "selectable label");
-SelectableOptions options = new SelectableOptions()
-            .selectingEvent(JQuery.$f("alert(event)", "event", "ui"));
-selectable.add(new SelectableBehavior(options));
-add(selectable);
-}}}
-
-*`SortableBehavior/SortableWebMarkupContainer`* ([http://jqueryui.com/demos/sortable/ original javascript version])
-
-Java-Code:
-{{{
-add(new WebMarkupContainer("sortable").add(JQBehaviors.sortable()));
-}}}
-
-Html-Template:
-{{{
-<ul wicket:id="sortable">
-	<li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 1</li>
-	<li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 2</li>
-	<li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 3</li>
-	<li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 4</li>
-	<li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 5</li>
-	<li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 6</li>
-	<li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 7</li>
-</ul>
 }}}
 
 
