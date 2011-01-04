@@ -1,0 +1,80 @@
+===JQuery UI Sortable as Wicket behavior example===
+
+*Prerequisites:* Your wicket application is configured to use JQWicket as described in the [http://code.google.com/p/jqwicket "Quick Start"] guide. Additionaly to the jquery core library you have to add "jquery ui" to the JQWicket's config.
+
+*Description:* This example demonstrates how to integrate JQuery UI Sortable with the wicket components using JQWicket.
+
+
+*Java-Code:*
+{{{
+public class SortablePage extends BaseJQueryUIPage {
+	public SortablePage() {
+		add(new WebMarkupContainer("sortable").add(JQBehaviors.sortable()));
+	}
+}
+}}}
+
+*Html-Template:*
+{{{
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:wicket="http://wicket.apache.org/" xml:lang="en" lang="en">
+<head>
+<title>Sortable example</title>
+<style type="text/css">
+li { margin: 0 3px 3px 3px; padding: 0.4em; padding-left: 1.5em; font-size: 1.4em; height: 18px; }
+li span { position: absolute; margin-left: -1.3em; }
+</style>
+</head>
+<body>
+<div class="demo">
+<ul wicket:id="sortable">
+	<li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 1</li>
+	<li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 2</li>
+	<li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 3</li>
+	<li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 4</li>
+	<li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 5</li>
+	<li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 6</li>
+	<li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 7</li>
+</ul>
+</div>
+</body>
+</html>
+}}}
+
+*Rendered Html:*
+{{{
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<title>Sortable example</title>
+<style type="text/css">
+li { margin: 0 3px 3px 3px; padding: 0.4em; padding-left: 1.5em; font-size: 1.4em; height: 18px; }
+li span { position: absolute; margin-left: -1.3em; }
+</style>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.6/jquery-ui.min.js"></script>
+<link rel="stylesheet" type="text/css" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.6/themes/base/jquery-ui.css" />
+<script type="text/javascript" id="4f35c29e-8212-4d5b-a463-d95b9e3eef04"><!--/*--><![CDATA[/*><!--*/
+$(document).ready(function(){$('#sortable1').sortable({});});
+/*-->]]>*/</script>
+</head>
+<body>
+<div class="demo">
+<ul id="sortable1">
+	<li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 1</li>
+	<li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 2</li>
+	<li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 3</li>
+	<li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 4</li>
+	<li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 5</li>
+	<li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 6</li>
+	<li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 7</li>
+</ul>
+</div>
+</body>
+</html>
+}}}
+
+*Note:* Instead of `JQBehaviors.sortable()` you can add an instance of `SortableBehavior` to the component.
