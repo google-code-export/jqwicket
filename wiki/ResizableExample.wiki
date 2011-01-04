@@ -1,0 +1,57 @@
+===JQuery UI Resizable as Wicket behavior example===
+
+*Prerequisites:* Your wicket application is configured to use JQWicket as described in the [http://code.google.com/p/jqwicket "Quick Start"] guide. Additionaly to the jquery core library you have to add "jquery ui" to JQWicket's config.
+
+*Description:* This example demonstrates how to integrate JQuery UI Resizable with wicket components using JQWicket.
+
+
+*Java-Code:*
+{{{
+public class ResizablePage extends BaseJQueryUIPage {
+	public ResizablePage() {
+		add(new WebMarkupContainer("resizable").add(JQBehaviors.resizable()));
+	}
+}
+}}}
+
+*Html-Template:*
+{{{
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:wicket="http://wicket.apache.org/" xml:lang="en" lang="en">
+<head>
+<title>Resizable example</title>
+</head>
+<body>
+
+<div wicket:id="resizable" class="ui-widget-content" style="width: 150px; height: 150px; padding: 0.5em;">
+	<h3 class="ui-widget-header" style="text-align: center; margin: 0;">Resizable</h3>
+</div>
+</body>
+</html>
+}}}
+
+*Rendered Html:*
+{{{
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<title>Resizable example</title>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.6/jquery-ui.min.js"></script>
+<link rel="stylesheet" type="text/css" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.6/themes/base/jquery-ui.css" />
+<script type="text/javascript" id="07cf046a-d4e6-47c7-b98c-d028f11129dc"><!--/*--><![CDATA[/*><!--*/
+$(document).ready(function(){$('#resizable1').resizable({});});
+/*-->]]>*/</script>
+</head>
+<body>
+<div class="ui-widget-content" style="width: 150px; height: 150px; padding: 0.5em;" id="resizable1">
+	<h3 class="ui-widget-header" style="text-align: center; margin: 0;">Resizable</h3>
+</div>
+</body>
+</html>
+}}}
+
+*Note:* Instead of `JQBehaviors.resizable()` you can add an instance of `ResizableBehavior` to the component.
