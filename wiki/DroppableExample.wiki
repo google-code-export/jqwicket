@@ -1,0 +1,24 @@
+===JQuery UI Droppable as Wicket behavior example===
+
+*[http://jqueryui.com/demos/droppable/ Original javascript version can be found here]*
+
+*Prerequisites:* Your wicket application is configured to use JQWicket as described in the [http://code.google.com/p/jqwicket "Quick Start"] guide. Additionaly to the jquery core library you have to add "jquery ui" to the JQWicket's config.
+
+*Description:* This example demonstrates how to integrate JQuery UI Droppable with the wicket components using JQWicket.
+
+Simple droppable panel:
+{{{
+MyPanel p = new MyPanel(....);
+p.add(JQBehaviors.droppable());
+add(p);
+}}}
+
+or alternatively by explicitly instantiating `DroppableBehavior`:
+{{{
+MyPanel p = new MyPanel(....);
+p.add(new DroppableBehavior());
+add(p);
+}}}
+
+
+More complex Drag'n'Drop example [DragDropExample_HighLevel can be found here].
