@@ -1,6 +1,6 @@
 ===JQuery UI Resizable as Wicket behavior example===
 
-*Prerequisites:* Your wicket application is configured to use JQWicket as described in the [http://code.google.com/p/jqwicket "Quick Start"] guide. Additionaly to the jquery core library you have to add "jquery ui" to JQWicket's config.
+*Prerequisites:* Your wicket application is configured to use JQWicket as described in the [http://code.google.com/p/jqwicket "Quick Start"] guide. Additionaly to the jquery core library you have to add "jquery ui" to the JQWicket's config.
 
 *Description:* This example demonstrates how to integrate JQuery UI Resizable with wicket components using JQWicket.
 
