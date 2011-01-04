@@ -1,5 +1,5 @@
 #labels example,documentation
-===Basiclow-level jquery integration===
+===Basic low-level jquery integration===
 
 *Prerequisites:* Your wicket application is configured to use JQWicket as described in the [http://code.google.com/p/jqwicket "Quick Start"] guide.
 
