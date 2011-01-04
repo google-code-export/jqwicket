@@ -1,0 +1,91 @@
+===JQuery UI Selectable as Wicket behavior example===
+
+*Prerequisites:* Your wicket application is configured to use JQWicket as described in the [http://code.google.com/p/jqwicket "Quick Start"] guide. Additionaly to the jquery core library you have to add "jquery ui" to the JQWicket's config.
+
+*Description:* This example demonstrates how to integrate JQuery UI Selectable with wicket components using JQWicket.
+
+
+*Java-Code:*
+{{{
+public class SelectablePage extends BaseJQueryUIPage {
+	public SelectablePage() {
+		add(new WebMarkupContainer("selectable").add(JQBehaviors.selectable()));
+	}
+}
+}}}
+
+*Html-Template:*
+{{{
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:wicket="http://wicket.apache.org/" xml:lang="en" lang="en">
+<head>
+<title>Selectable example</title>
+<style type="text/css">
+li.ui-selecting {
+	background: #FECA40;
+}
+li.ui-selected {
+	background: #F39814;
+	color: white;
+}
+</style>
+</head>
+<body>
+<div class="demo">
+<ol wicket:id="selectable">
+	<li class="ui-widget-content">Item 1</li>
+	<li class="ui-widget-content">Item 2</li>
+	<li class="ui-widget-content">Item 3</li>
+	<li class="ui-widget-content">Item 4</li>
+	<li class="ui-widget-content">Item 5</li>
+	<li class="ui-widget-content">Item 6</li>
+	<li class="ui-widget-content">Item 7</li>
+</ol>
+</div>
+</body>
+</html>
+}}}
+
+*Rendered Html:*
+{{{
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<title>Selectable example</title>
+<style type="text/css">
+li.ui-selecting {
+	background: #FECA40;
+}
+
+li.ui-selected {
+	background: #F39814;
+	color: white;
+}
+</style>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.6/jquery-ui.min.js"></script>
+<link rel="stylesheet" type="text/css" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.6/themes/base/jquery-ui.css" />
+<script type="text/javascript" id="f80f7c79-6c03-44fe-a537-ea2c2b84bac1"><!--/*--><![CDATA[/*><!--*/
+$(document).ready(function(){$('#selectable1').selectable({});});
+/*-->]]>*/</script>
+</head>
+<body>
+<div class="demo">
+<ol id="selectable1">
+	<li class="ui-widget-content">Item 1</li>
+	<li class="ui-widget-content">Item 2</li>
+	<li class="ui-widget-content">Item 3</li>
+	<li class="ui-widget-content">Item 4</li>
+	<li class="ui-widget-content">Item 5</li>
+	<li class="ui-widget-content">Item 6</li>
+	<li class="ui-widget-content">Item 7</li>
+</ol>
+</div>
+</body>
+</html>
+}}}
+
+*Note:* Instead of `JQBehaviors.selectable()` you can add an instance of `SelectableBehavior` to the component.
