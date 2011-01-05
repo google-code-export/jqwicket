@@ -1,0 +1,3 @@
+===JQuery JCarousel Plugin as Wicket behavior example===
+
+*[http://sorgalla.com/projects/jcarousel/ Original javascript version can be found here]*
