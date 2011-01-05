@@ -1,0 +1,3 @@
+===JQuery LiScroll Plugin as Wicket behavior example===
+
+*[http://www.gcmingati.net/wordpress/wp-content/lab/jquery/newsticker/jq-liscroll/scrollanimate.html Original javascript version can be found here]*
