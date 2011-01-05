@@ -1,0 +1,3 @@
+===JQuery CJ Image Flipbox Plugin as Wicket behavior example===
+
+*[http://www.cjboco.com/projects.cfm/project/cj-image-flipbox Original javascript version can be found here]*
