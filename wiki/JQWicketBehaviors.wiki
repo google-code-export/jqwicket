@@ -12,11 +12,7 @@
   * [ButtonExample JQuery UI Button as Wicket behavior example]
   * [DatePickerExample JQuery UI DatePicker as Wicket behavior example]
   * [DialogExample JQuery UI Dialog as Wicket behavior example]
-
-
-*`ProgressbarBehavior/ProgressbarWebMarkupContainer`* ([http://jqueryui.com/demos/progressbar/ original javascript version])
-
-_TODO_
+  * [ProgressbarExample JQuery UI Progressbar as Wicket behavior example]
 
 *`SliderBehavior/SliderWebMarkupContainer`* ([http://jqueryui.com/demos/slider/ original javascript version])
 
