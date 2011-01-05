@@ -1,0 +1,3 @@
+===JQuery Fancy Box Plugin as Wicket behavior example===
+
+*[http://fancybox.net Original javascript version can be found here]*
