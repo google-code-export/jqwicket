@@ -1,0 +1,3 @@
+===JQuery Color Picker Plugin as Wicket behavior example===
+
+*[http://www.eyecon.ro/colorpicker/ Original javascript version can be found here]*
