@@ -1,0 +1,3 @@
+===JQuery Watermark Plugin as Wicket behavior example===
+
+*[http://code.google.com/p/jquery-watermark/ Original javascript version can be found here]*
