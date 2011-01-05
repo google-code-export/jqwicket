@@ -8,12 +8,9 @@
   * [SelectableExample JQuery UI Selectable as Wicket behavior example]
   * [DraggableExample JQuery UI Draggable as Wicket behavior example]
   * [DroppableExample JQuery UI Droppable as Wicket behavior example]
+  * [AccordionExample JQuery UI Accordion as Wicket behavior example]
 
 
-
-*`AccordionBehavior/AccordionWebMarkupContainer`* ([http://jqueryui.com/demos/accordion/ original javascript version])
-
-_TODO_
 
 *`ButtonBehavior/ButtonWebMarkupContainer`* ([http://jqueryui.com/demos/button/ original javascript version])
 
