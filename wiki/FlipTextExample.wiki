@@ -1,0 +1,3 @@
+===JQuery Flip Text Plugin as Wicket behavior example===
+
+*[http://pupunzi.open-lab.com/mb-jquery-components/mb-fliptext/ Original javascript version can be found here]*
