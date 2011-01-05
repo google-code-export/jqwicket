@@ -17,6 +17,7 @@
   * [NotifierExample JQuery Notifier Plugin (Growl like) as Wicket behavior example]
   * [UniformExample JQuery Uniform Plugin as Wicket behavior example]
   * [UploadifyExample JQuery Uploadify Plugin as Wicket behavior example]
+  * [TipTipExample JQuery TipTip Plugin as Wicket behavior example]
 
 
 *`SparklineBehavior/SparklineWebMarkupContainer`* ([http://omnipotent.net/jquery.sparkline/ original javascript version])
@@ -38,62 +39,3 @@ _TODO_
 *`NivoSliderBehavior/NivoSliderWebMarkupContainer`* ([http://nivo.dev7studios.com original javascript version])
 
 _TODO_
-
-
-*`TipTipBehavior/TipTipMarkupContainer`* ([http://code.drewwilson.com/entry/tiptip-jquery-plugin original javascript version])
-
-Java-Code:
-{{{
-add(new GenericTipTipBehavior(".someClass", 
-          new TipTipOptions().content("<h3>custom dynamic tooltip</h3>").maxWidth("auto")));
-
-add(new Link<Void>("tiptip") {
-   @Override
-   public void onClick() {}
-}.add(new TipTipBehavior(
-          new TipTipOptions().maxWidth("auto").edgeOffset(10))));
-}}}
-
-HTML-Template:
-{{{
-<p>
-Cras sed ante. Phasellus in massa. <a wicket:id="tiptip" title="This will show up in the TipTip popup.">Curabitur dolor eros</a>, 
-gravida et, hendrerit ac, cursus non, massa.
-<br/><br/>
-<span id="foo">
-<img src="_images/tiptip/walle.jpg" class="someClass" />
-</span>
-</p>
-}}}
-
-Rendered HTML-Code:
-{{{
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-<head>
-<title>TipTip example</title>
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.6/jquery-ui.min.js"></script>
-<link rel="stylesheet" type="text/css" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.6/themes/base/jquery-ui.css" />
-<script type="text/javascript" src="resources/net.javaforge.jqwicket.ui.tiptip.TipTipOptions/jquery.tipTip.minified.js"></script>
-<link rel="stylesheet" type="text/css" href="resources/net.javaforge.jqwicket.ui.tiptip.TipTipOptions/tipTip.css" />
-<script type="text/javascript" id="b6523035-67aa-4bc5-ad84-905c6736de59"><!--/*--><![CDATA[/*><!--*/
-$(document).ready(function(){$('.someClass').tipTip({content:'<h3>this is custom dynamic tooltip</h3>', maxWidth:'auto'});
-$('#tiptip1').tipTip({maxWidth:'auto', edgeOffset:10});});
-/*-->]]>*/</script>
-</head>
-<body> 
-<div class="demo">
-<p>
-Cras sed ante. Phasellus in massa. <a title="This will show up in the TipTip popup." id="tiptip1" 
-href="?wicket:interface=:0:tiptip::ILinkListener::">Curabitur dolor eros</a>, gravida et, hendrerit ac, cursus non, massa.
-<br/><br/>
-<span id="foo">
-<img src="_images/tiptip/walle.jpg" class="someClass"/>
-</span>
-</p>
-</div>
-</body>
-</html>
-}}}
