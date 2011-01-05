@@ -1,0 +1,78 @@
+===JQuery UI Progressbar as Wicket behavior example===
+
+*[http://jqueryui.com/demos/progressbar/ Original javascript version can be found here]*
+
+*Prerequisites:* Your wicket application is configured to use JQWicket as described in the [http://code.google.com/p/jqwicket "Quick Start"] guide. Additionaly to the jquery core library you have to add "jquery ui" to the JQWicket's config.
+
+*Description:* This example demonstrates how to integrate JQuery UI Progressbar with the wicket components using JQWicket.
+
+*Java-Code:*
+{{{
+public class ProgressbarPage extends WebPage {
+
+	private int counter = 0;
+ 
+	public ProgressbarPage() {
+
+		final ProgressbarWebMarkupContainer progressbar = new ProgressbarWebMarkupContainer("progressbar");
+		add(progressbar);
+                
+                // update progressbar every second via ajax
+		add(new AbstractAjaxTimerBehavior(Duration.seconds(1)) {
+			@Override
+			protected void onTimer(AjaxRequestTarget target) {
+				progressbar.value(target, counter);
+				counter++;
+				if (counter > 100)
+					counter = 0;
+			}
+		});
+	}
+}
+}}}
+
+*Html-Template:*
+{{{
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:wicket="http://wicket.apache.org/" xml:lang="en" lang="en">
+<head>
+<title>Progressbar example</title>
+</head>
+<body> 
+ <div wicket:id="progressbar" />
+</body>
+</html>
+}}}
+
+*Rendered Html:*
+{{{
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<title>Progressbar example</title>
+<script type="text/javascript" src="resources/org.apache.wicket.markup.html.WicketEventReference/wicket-event.js"></script>
+<script type="text/javascript" src="resources/org.apache.wicket.ajax.WicketAjaxReference/wicket-ajax.js"></script>
+<script type="text/javascript" src="resources/org.apache.wicket.ajax.AbstractDefaultAjaxBehavior/wicket-ajax-debug.js"></script>
+<script type="text/javascript" id="wicket-ajax-debug-enable"><!--/*--><![CDATA[/*><!--*/
+wicketAjaxDebugEnable=true;
+/*-->]]>*/</script>
+
+<script type="text/javascript" ><!--/*--><![CDATA[/*><!--*/
+Wicket.Event.add(window, "load", function(event) { setTimeout("var wcall=wicketAjaxGet('?wicket:interface=:3::IActivePageBehaviorListener:0:&wicket:ignoreIfNotActive=true',function() { }.bind(this),function() { }.bind(this));", 1000);;});
+/*-->]]>*/</script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.6/jquery-ui.min.js"></script>
+<link rel="stylesheet" type="text/css" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.6/themes/base/jquery-ui.css" />
+<script type="text/javascript" id="ffbb3e2a-adc9-45d4-85a4-99779ec29571"><!--/*--><![CDATA[/*><!--*/
+$(document).ready(function(){$('#progressbar8').progressbar({});
+});
+/*-->]]>*/</script>
+</head>
+<body> 
+ <div id="progressbar8"></div>
+</body>
+</html>
+}}}
