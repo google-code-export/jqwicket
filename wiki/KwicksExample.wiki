@@ -1,0 +1,3 @@
+===JQuery Kwicks Plugin as Wicket behavior example===
+
+*[http://www.jeremymartin.name/projects.php?project=kwicks Original javascript version can be found here]*
