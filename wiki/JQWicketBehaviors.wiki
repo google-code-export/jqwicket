@@ -12,7 +12,9 @@
   * [ButtonExample JQuery UI Button as Wicket behavior example]
   * [DatePickerExample JQuery UI DatePicker as Wicket behavior example]
   * [DialogExample JQuery UI Dialog as Wicket behavior example]
-  * [ProgressbarExample JQuery UI Progressbar as Wicket behavior example]
+  * [ProgressbarExample JQuery UI Progressbar as Wicket behavior example]  
+  * [NotifierExample JQuery Notifier Plugin (Growl like) as Wicket behavior example]
+
 
 *`SliderBehavior/SliderWebMarkupContainer`* ([http://jqueryui.com/demos/slider/ original javascript version])
 
@@ -38,71 +40,6 @@ _TODO_
 
 _TODO_
 
-*`NotifierBehavior/NotifierWebMarkupContainer`* ([http://www.erichynds.com/jquery/a-jquery-ui-growl-ubuntu-notification-widget/ original javascript version])
-
-Following notifier example demonstrates how to open notification box via AJAX while clicking on Wicket's `AjaxLink`:
-
-Java-Code:
-{{{
-final NotifierWebMarkupContainer notifier = new NotifierWebMarkupContainer("notifier1");
-add(notifier);
-add(new AjaxLink<Void>("notifier.open1") {
-   @Override
-   public void onClick(AjaxRequestTarget target) {
-      notifier.create(
-         target,
-         "Test Notification",
-         "This is an example of the default config, and will fade out after five seconds.");
-   }
-});
-}}}
-
-HTML-Template:
-{{{
-<a wicket:id="notifier.open1">open notifier</a><br/>
-<div wicket:id="notifier1">
-    <div id="basic-template">
-        <a class="ui-notify-cross ui-notify-close" href="#">x</a>
-        <h1>#{title}</h1>
-        <p>#{text}</p>
-    </div>
-</div>
-}}}
-
-Rendered HTML-Code:
-{{{
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-<head>
-<title>Notifier example</title>
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.6/jquery-ui.min.js"></script>
-<link rel="stylesheet" type="text/css" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.6/themes/base/jquery-ui.css" />
-<script type="text/javascript" src="resources/net.javaforge.jqwicket.ui.notifier.NotifierOptions/jquery.notify.min.js"></script>
-<link rel="stylesheet" type="text/css" href="resources/net.javaforge.jqwicket.ui.notifier.NotifierOptions/ui.notify.css" />
-<script type="text/javascript" id="c7f64977-3011-488e-990c-22b151f26514"><!--/*--><![CDATA[/*><!--*/
-$(document).ready(function(){$('#notifier11').notify({});});
-/*-->]]>*/</script>
-<script type="text/javascript" src="resources/org.apache.wicket.markup.html.WicketEventReference/wicket-event.js"></script>
-<script type="text/javascript" src="resources/org.apache.wicket.ajax.WicketAjaxReference/wicket-ajax.js"></script>
-<script type="text/javascript" src="resources/org.apache.wicket.ajax.AbstractDefaultAjaxBehavior/wicket-ajax-debug.js"></script>
-<script type="text/javascript" id="wicket-ajax-debug-enable"><!--/*--><![CDATA[/*><!--*/
-wicketAjaxDebugEnable=true;
-/*-->]]>*/</script>
-</head>
-<body> 
-<a id="notifier_open12" href="#" onclick="var wcall=wicketAjaxGet(';jsessionid=nfj2luagsi8r?wicket:interface=:0:notifier.open1::IBehaviorListener:0:',function() { }.bind(this),function() { }.bind(this), function() {return Wicket.$('notifier_open12') != null;}.bind(this));return !wcall;">open notifier</a><br/>
-<div id="notifier11">
-    <div id="basic-template">
-        <a class="ui-notify-cross ui-notify-close" href="#">x</a>
-        <h1>#{title}</h1>
-        <p>#{text}</p>
-    </div>
-</div>
-</body>
-</html>
-}}}
 
 *`UniformBehavior/UniformWebMarkupContainer`* ([http://pixelmatrixdesign.com/uniform/ original javascript version])
 
