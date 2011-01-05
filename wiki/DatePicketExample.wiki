@@ -1,0 +1,65 @@
+===JQuery UI DatePicker as Wicket behavior example===
+
+*[http://jqueryui.com/demos/datepicker/ Original javascript version can be found here]*
+
+*Prerequisites:* Your wicket application is configured to use JQWicket as described in the [http://code.google.com/p/jqwicket "Quick Start"] guide. Additionaly to the jquery core library you have to add "jquery ui" to the JQWicket's config.
+
+*Description:* This example demonstrates how to integrate JQuery UI DatePicker with the wicket components using JQWicket.
+
+*Java-Code:*
+{{{
+public class DatePickerPage extends WebPage {
+
+	public DatePickerPage() {
+                // add text field with the datepicker popup
+		add(new DatePickerTextField<String>("datepicker"));
+                
+                // add "inline" datepicker  
+		add(new WebMarkupContainer("datepicker.inline")
+                          .add(new DatePickerBehavior()));
+
+	}
+}
+}}}
+
+*Html-Template:*
+{{{
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:wicket="http://wicket.apache.org/" xml:lang="en" lang="en">
+<head>
+<title>Date Picker example</title>
+</head>
+<body>
+<p>Date: <input type="text" wicket:id="datepicker"/></p>
+<br/><br/>
+<p>Date: <div wicket:id="datepicker.inline"/></p>
+</body>
+</html>
+}}}
+
+*Rendered Html:*
+{{{
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<title>Date Picker example</title>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.6/jquery-ui.min.js"></script>
+<link rel="stylesheet" type="text/css" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.6/themes/base/jquery-ui.css" />
+<script type="text/javascript" id="873b0621-212e-493a-8534-ec336934f921"><!--/*--><![CDATA[/*><!--*/
+$(document).ready(function(){$('#datepicker4').datepicker({});
+$('#datepicker_inline5').datepicker({});
+});
+/*-->]]>*/</script>
+</head>
+<body>
+<p>Date: <input type="text" value="" name="datepicker" id="datepicker4"/></p>
+<br/><br/>
+<p>Date: <div id="datepicker_inline5"></div></p>
+</body>
+</html>
+}}}
+
