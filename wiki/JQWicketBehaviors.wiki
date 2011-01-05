@@ -38,23 +38,3 @@
   * [PrettyLoaderExample JQuery PrettyLoader Plugin as Wicket behavior example]
   * [PrettyCommentsExample JQuery PrettyComments Plugin as Wicket behavior example]
   * [PrettyPopinExample JQuery PrettyPopin Plugin as Wicket behavior example]
-
-*`SparklineBehavior/SparklineWebMarkupContainer`* ([http://omnipotent.net/jquery.sparkline/ original javascript version])
-
-_TODO_
-
-*`TabsBehavior/TabsWebMarkupContainer`* ([http://jqueryui.com/demos/tabs/ original javascript version])
-
-_TODO_
-
-*`JCarouselBehavior/JCarouselWebMarkupContainer`* ([http://sorgalla.com/projects/jcarousel/ original javascript version])
-
-_TODO_
-
-*`MaskedInputBehavior/MaskedInputWebMarkupContainer`*  ([http://digitalbush.com/projects/masked-input-plugin/ original javascript version])
-
-_TODO_
-
-*`NivoSliderBehavior/NivoSliderWebMarkupContainer`* ([http://nivo.dev7studios.com original javascript version])
-
-_TODO_
