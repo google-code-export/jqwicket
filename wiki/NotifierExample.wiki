@@ -6,6 +6,8 @@
 
 *Description:* This example demonstrates how to integrate JQuery Notifier Plugin with the wicket components using JQWicket.
 
+http://jqwicket.googlecode.com/svn-history/r233/wiki/notifier_example.png
+
 *Java-Code:*
 {{{
 final NotifierWebMarkupContainer notifier = new NotifierWebMarkupContainer("notifier1");
