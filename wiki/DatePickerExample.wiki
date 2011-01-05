@@ -62,3 +62,13 @@ $('#datepicker_inline5').datepicker({});
 </body>
 </html>
 }}}
+
+
+*Note!* You can additionaly configure `DatePicker` by passing some options to it:
+{{{
+new DatePickerTextField<String>("datepicker", 
+          new DatePickerOptions()
+              .autoSize(true).buttonText("show datepicker")
+              .beforeShowEvent("alert('hello world!')")
+);
+}}}
