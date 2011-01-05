@@ -1,0 +1,57 @@
+===JQuery UI Slider as Wicket behavior example===
+
+*[http://jqueryui.com/demos/slider/ Original javascript version can be found here]*
+
+*Prerequisites:* Your wicket application is configured to use JQWicket as described in the [http://code.google.com/p/jqwicket "Quick Start"] guide. Additionaly to the jquery core library you have to add "jquery ui" to the JQWicket's config.
+
+*Description:* This example demonstrates how to integrate JQuery UI Slider with the wicket components using JQWicket.
+
+*Java-Code:*
+{{{
+public class SliderPage extends WebPage {
+	public SliderPage() {
+		add(new WebMarkupContainer("slider").add(new SliderBehavior(
+				new SliderOptions().min(10).max(100).value(20))));
+	}
+}
+}}}
+
+*Html-Template:*
+{{{
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:wicket="http://wicket.apache.org/" xml:lang="en" lang="en">
+<head>
+<title>Slider example</title>
+</head>
+<body>
+<div class="demo">
+	<div wicket:id="slider" style="width: 300px;"/>
+</div>
+</body>
+</html>
+}}}
+
+*Rendered Html:*
+{{{
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<title>Slider example</title>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.6/jquery-ui.min.js"></script>
+<link rel="stylesheet" type="text/css" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.6/themes/base/jquery-ui.css" />
+<script type="text/javascript" id="0077b303-3f92-46f8-ba93-b2da5b85e5a7"><!--/*--><![CDATA[/*><!--*/
+$(document).ready(function(){$('#slider1').slider({min:10, max:100, value:20});});
+/*-->]]>*/</script>
+
+</head>
+<body>
+<div class="demo">
+	<div style="width: 300px;" id="slider1"></div>
+</div>
+</body>
+</html>
+}}}
