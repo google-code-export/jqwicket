@@ -1,3 +1,5 @@
+#summary JQuery TipTip Plugin as Wicket behavior example.
+
 ===JQuery `TipTip` Plugin as Wicket behavior example===
 
 *[http://code.drewwilson.com/entry/tiptip-jquery-plugin Original javascript version can be found here]*
