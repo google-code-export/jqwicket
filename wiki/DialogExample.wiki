@@ -1,0 +1,77 @@
+===JQuery UI Dialog as Wicket behavior example===
+
+*[http://jqueryui.com/demos/dialog/ Original javascript version can be found here]*
+
+*Prerequisites:* Your wicket application is configured to use JQWicket as described in the [http://code.google.com/p/jqwicket "Quick Start"] guide. Additionaly to the jquery core library you have to add "jquery ui" to the JQWicket's config.
+
+*Description:* This example demonstrates how to integrate JQuery UI Dialog with the wicket components using JQWicket.
+
+*Java-Code:*
+{{{
+public class DialogPage extends WebPage {
+	public DialogPage() {
+		final DialogWebMarkupContainer dialog = new DialogWebMarkupContainer(
+				"dialog", new DialogOptions().modal(true).resizable(false));
+		add(dialog);
+
+		add(new AjaxLink<Void>("dialog.open1") {
+			@Override
+			public void onClick(AjaxRequestTarget target) {
+				dialog.open(target);
+			}
+		});
+
+	}
+}
+}}}
+
+*Html-Template:*
+{{{
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:wicket="http://wicket.apache.org/" xml:lang="en" lang="en">
+<head>
+<title>Dialog example</title>
+</head>
+<body> 
+<a wicket:id="dialog.open1">open dialog</a><br/>
+
+<div wicket:id="dialog" title="Basic dialog">
+	<p>This is the default dialog which is useful for displaying information. The dialog window can be moved, resized and closed with the 'x' icon.</p>
+</div>
+</body>
+</html>
+}}}
+
+*Rendered Html:*
+{{{
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<title>Dialog example</title>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.6/jquery-ui.min.js"></script>
+<link rel="stylesheet" type="text/css" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.6/themes/base/jquery-ui.css" />
+<script type="text/javascript" id="cd21405b-5911-4a90-9244-85701187dcf0"><!--/*--><![CDATA[/*><!--*/
+$(document).ready(function(){$('#dialog6').dialog({autoOpen:false, position:'center', modal:true, resizable:false});});
+/*-->]]>*/</script>
+
+<script type="text/javascript" src="resources/org.apache.wicket.markup.html.WicketEventReference/wicket-event.js"></script>
+<script type="text/javascript" src="resources/org.apache.wicket.ajax.WicketAjaxReference/wicket-ajax.js"></script>
+<script type="text/javascript" src="resources/org.apache.wicket.ajax.AbstractDefaultAjaxBehavior/wicket-ajax-debug.js"></script>
+<script type="text/javascript" id="wicket-ajax-debug-enable"><!--/*--><![CDATA[/*><!--*/
+wicketAjaxDebugEnable=true;
+/*-->]]>*/</script>
+</head>
+<body> 
+<a id="dialog_open17" href="#" onclick="var wcall=wicketAjaxGet('?wicket:interface=:2:dialog.open1::IBehaviorListener:0:',function() { }.bind(this),function() { }.bind(this), function() {return Wicket.$('dialog_open17') != null;}.bind(this));return !wcall;">open dialog</a><br/>
+
+<div title="Basic dialog" id="dialog6">
+	<p>This is the default dialog which is useful for displaying information. The dialog window can be moved, resized and closed with the 'x' icon.</p>
+
+</div>
+</body>
+</html>
+}}}
