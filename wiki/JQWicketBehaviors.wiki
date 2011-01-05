@@ -24,7 +24,7 @@
   * [ColorPickerExample JQuery ColorPicker Plugin as Wicket behavior example]
   * [JCarouselExample JQuery JCarousel Plugin as Wicket behavior example]
   * [SparklineExample JQuery Sparkline Plugin as Wicket behavior example]
-  * [CJImageFlipboxExample JQuery CJImageFlipbox Plugin as Wicket behavior example]
+  * [CJImageFlipboxExample JQuery CJ Image Flipbox Plugin as Wicket behavior example]
   * [LiScrollExample JQuery LiScroll Plugin as Wicket behavior example]
   * [FancyBoxExample JQuery FancyBox Plugin as Wicket behavior example]
   * [CloudZoomExample JQuery CloudZoom Plugin as Wicket behavior example]
@@ -38,3 +38,4 @@
   * [PrettyLoaderExample JQuery PrettyLoader Plugin as Wicket behavior example]
   * [PrettyCommentsExample JQuery PrettyComments Plugin as Wicket behavior example]
   * [PrettyPopinExample JQuery PrettyPopin Plugin as Wicket behavior example]
+  * [WatermarkExample JQuery Watermark Plugin as Wicket behavior example]
