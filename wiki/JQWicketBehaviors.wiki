@@ -11,11 +11,8 @@
   * [AccordionExample JQuery UI Accordion as Wicket behavior example]
   * [ButtonExample JQuery UI Button as Wicket behavior example]
   * [DatePickerExample JQuery UI DatePicker as Wicket behavior example]
+  * [DialogExample JQuery UI Dialog as Wicket behavior example]
 
-
-*`DialogBehavior/DialogWebMarkupContainer`* ([http://jqueryui.com/demos/dialog/ original javascript version])
-
-_TODO_
 
 *`ProgressbarBehavior/ProgressbarWebMarkupContainer`* ([http://jqueryui.com/demos/progressbar/ original javascript version])
 
