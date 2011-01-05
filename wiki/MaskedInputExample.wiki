@@ -1,0 +1,3 @@
+===JQuery MaskedInput Plugin as Wicket behavior example===
+
+*[http://digitalbush.com/projects/masked-input-plugin/ Original javascript version can be found here]*
