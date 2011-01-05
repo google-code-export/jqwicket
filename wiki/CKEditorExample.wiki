@@ -1,0 +1,3 @@
+===JQuery `CKEditor` Plugin as Wicket behavior example===
+
+*[http://ckeditor.com Original javascript version can be found here]*
