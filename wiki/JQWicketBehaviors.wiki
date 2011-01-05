@@ -13,12 +13,9 @@
   * [DatePickerExample JQuery UI DatePicker as Wicket behavior example]
   * [DialogExample JQuery UI Dialog as Wicket behavior example]
   * [ProgressbarExample JQuery UI Progressbar as Wicket behavior example]  
+  * [SliderExample JQuery UI Slider as Wicket behavior example] 
   * [NotifierExample JQuery Notifier Plugin (Growl like) as Wicket behavior example]
 
-
-*`SliderBehavior/SliderWebMarkupContainer`* ([http://jqueryui.com/demos/slider/ original javascript version])
-
-_TODO_
 
 *`SparklineBehavior/SparklineWebMarkupContainer`* ([http://omnipotent.net/jquery.sparkline/ original javascript version])
 
