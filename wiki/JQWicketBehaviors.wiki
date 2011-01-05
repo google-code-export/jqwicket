@@ -38,4 +38,5 @@
   * [PrettyLoaderExample JQuery PrettyLoader Plugin as Wicket behavior example]
   * [PrettyCommentsExample JQuery PrettyComments Plugin as Wicket behavior example]
   * [PrettyPopinExample JQuery PrettyPopin Plugin as Wicket behavior example]
+  * [PrettyGalleryExample JQuery PrettyGallery Plugin as Wicket behavior example]
   * [WatermarkExample JQuery Watermark Plugin as Wicket behavior example]
