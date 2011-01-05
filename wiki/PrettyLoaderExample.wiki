@@ -1,0 +1,3 @@
+===JQuery `PrettyLoader` Plugin as Wicket behavior example===
+
+*[http://www.no-margin-for-errors.com/projects/prettyloader/ Original javascript version can be found here]*
