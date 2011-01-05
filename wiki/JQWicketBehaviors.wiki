@@ -10,11 +10,8 @@
   * [DroppableExample JQuery UI Droppable as Wicket behavior example]
   * [AccordionExample JQuery UI Accordion as Wicket behavior example]
   * [ButtonExample JQuery UI Button as Wicket behavior example]
+  * [DatePickerExample JQuery UI `DatePicker` as Wicket behavior example]
 
-
-*`DatePickerBehavior/DatePickerWebMarkupContainer`* ([http://jqueryui.com/demos/datepicker/ original javascript version])
-
-_TODO_
 
 *`DialogBehavior/DialogWebMarkupContainer`* ([http://jqueryui.com/demos/dialog/ original javascript version])
 
