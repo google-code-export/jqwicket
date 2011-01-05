@@ -1,0 +1,3 @@
+===JQuery `PrettyComments` Plugin as Wicket behavior example===
+
+*[http://www.no-margin-for-errors.com/projects/prettycomments/ Original javascript version can be found here]*
