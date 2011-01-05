@@ -1,0 +1,3 @@
+===JQuery `CloudZoom` Plugin as Wicket behavior example===
+
+*[http://www.professorcloud.com/mainsite/cloud-zoom.htm Original javascript version can be found here]*
