@@ -1,0 +1,3 @@
+===JQuery `PrettyPopin` Plugin as Wicket behavior example===
+
+*[http://www.no-margin-for-errors.com/projects/prettypopin/ Original javascript version can be found here]*
