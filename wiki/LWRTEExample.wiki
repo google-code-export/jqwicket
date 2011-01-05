@@ -1,0 +1,3 @@
+===JQuery Lightweight Rich Text Editor Plugin as Wicket behavior example===
+
+*[http://code.google.com/p/lwrte/ Original javascript version can be found here]*
