@@ -1,0 +1,3 @@
+===JQuery `PrettyGallery` Plugin as Wicket behavior example===
+
+*[http://www.no-margin-for-errors.com/projects/prettygallery/ Original javascript version can be found here]*
