@@ -1,0 +1,3 @@
+===JQuery GMap (v2) Plugin as Wicket behavior example===
+
+*[http://gmap.nurtext.de Original javascript version can be found here]*
