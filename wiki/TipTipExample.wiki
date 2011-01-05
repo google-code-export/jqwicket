@@ -1,10 +1,10 @@
-===JQuery TipTip Plugin as Wicket behavior example===
+===JQuery `TipTip` Plugin as Wicket behavior example===
 
 *[http://code.drewwilson.com/entry/tiptip-jquery-plugin Original javascript version can be found here]*
 
 *Prerequisites:* Your wicket application is configured to use JQWicket as described in the [http://code.google.com/p/jqwicket "Quick Start"] guide.
 
-*Description:* This example demonstrates how to integrate JQuery TipTip Plugin with the wicket components using JQWicket.
+*Description:* This example demonstrates how to integrate JQuery `TipTip` Plugin with the wicket components using JQWicket.
 
 http://jqwicket.googlecode.com/svn-history/r246/wiki/tiptip_example.png
 
