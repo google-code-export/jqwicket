@@ -1,3 +1,60 @@
 ===JQuery Color Picker Plugin as Wicket behavior example===
 
 *[http://www.eyecon.ro/colorpicker/ Original javascript version can be found here]*
+
+*Prerequisites:* Your wicket application is configured to use JQWicket as described in the [http://code.google.com/p/jqwicket "Quick Start"] guide.
+
+*Description:* This example demonstrates how to integrate JQuery Color Picker Plugin with the wicket components using JQWicket.
+
+http://jqwicket.googlecode.com/svn-history/r296/wiki/colorpicker_example.png
+
+
+*Java-Code:*
+{{{
+public class ColorPickerPage extends WebPage {
+	public ColorPickerPage() {
+		add(new ColorPickerTextField<String>("colorpicker"));
+	}
+}
+
+}}}
+
+*Html-Template:*
+{{{
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:wicket="http://wicket.apache.org/" xml:lang="en" lang="en">
+<head>
+<title>Color Picker example</title>
+</head>
+<body> 
+<div class="demo">
+	<p>Color: <input type="text" wicket:id="colorpicker"/></p>
+</div>
+</body>
+</html>
+}}}
+
+*Rendered Html:*
+{{{
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<title>Color Picker example</title>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
+<script type="text/javascript" src="resources/net.javaforge.jqwicket.ui.colorpicker.ColorPickerOptions/js/colorpicker.js"></script>
+<link rel="stylesheet" type="text/css" href="resources/net.javaforge.jqwicket.ui.colorpicker.ColorPickerOptions/css/colorpicker.css" />
+<script type="text/javascript" id="b4a69179-4c9c-4425-b445-fc8bf8a04850"><!--/*--><![CDATA[/*><!--*/
+$(document).ready(function(){$('#colorpicker1').keyup(function(){$(this).ColorPickerSetColor(this.value);});
+$('#colorpicker1').ColorPicker({onSubmit:function(hsb,hex,rgb,el){$(el).val(hex);$(el).ColorPickerHide();}, onBeforeShow:function(){$(this).ColorPickerSetColor(this.value);}});});
+/*-->]]>*/</script>
+</head>
+<body> 
+<div class="demo">
+	<p>Color: <input type="text" value="" name="colorpicker" id="colorpicker1"/></p>
+</div>
+</body>
+</html>
+}}}
