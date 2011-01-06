@@ -40,3 +40,4 @@
   * [PrettyPopinExample JQuery PrettyPopin Plugin as Wicket behavior example]
   * [PrettyGalleryExample JQuery PrettyGallery Plugin as Wicket behavior example]
   * [WatermarkExample JQuery Watermark Plugin as Wicket behavior example]
+  * [DateTimePickerExample JQuery UI DateTimePicker as Wicket behavior example]
