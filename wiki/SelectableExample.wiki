@@ -9,7 +9,7 @@
 
 *Java-Code:*
 {{{
-public class SelectablePage extends BaseJQueryUIPage {
+public class SelectablePage extends WebPage {
 	public SelectablePage() {
 		add(new WebMarkupContainer("selectable").add(JQBehaviors.selectable()));
 	}
