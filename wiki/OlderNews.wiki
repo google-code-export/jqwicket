@@ -1,3 +1,27 @@
+=== 28.12.2010 JQWicket 0.3 released. [http://code.google.com/p/jqwicket/downloads/detail?name=jqwicket-0.3-dist.zip Download distribution here] ===
+
+- Added [http://fancybox.net/ JQuery Fancybox plugin] implementation
+
+- Added [http://www.gcmingati.net/wordpress/wp-content/lab/jquery/newsticker/jq-liscroll/scrollanimate.html JQuery LiScroll plugin] implementation
+
+- Added [http://www.professorcloud.com/mainsite/cloud-zoom.htm JQuery Cloud Zoom plugin] implementation
+
+- Added [http://gmap.nurtext.de JQuery Gmap plugin] implementation
+
+- Added [http://code.google.com/p/jquery-watermark JQuery Watermark plugin] implementation
+
+- Added [http://pupunzi.open-lab.com/mb-jquery-components/mb-fliptext JQuery Fliptext plugin] implementation
+
+- Added [http://pupunzi.open-lab.com/mb-jquery-components/jquery-mb-extruder JQuery Extruder plugin] implementation
+
+- Added [http://www.jeremymartin.name/projects.php?project=kwicks JQuery Kwicks plugin] implementation
+
+- Added [http://markitup.jaysalvat.com/home JQuery MarkItUp plugin] implementation
+
+- Added [http://code.google.com/p/lwrte JQuery Lightweight Rich Text Editor plugin] implementation
+
+- Added [http://ckeditor.com/ JQuery CKEditor plugin] implementation
+
 === 28.11.2010 JQWicket 0.2 released. [http://code.google.com/p/jqwicket/downloads/detail?name=jqwicket-0.2-dist.zip Download distribution here] ===
 
 - Added [http://www.cjboco.com/projects.cfm/project/cj-image-flipbox JQuery CJ Image Flipbox plugin] implementation
