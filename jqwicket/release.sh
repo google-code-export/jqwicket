@@ -1,1 +1,0 @@
-mvn -P dist release:prepare
