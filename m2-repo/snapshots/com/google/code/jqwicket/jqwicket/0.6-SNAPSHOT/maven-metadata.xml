@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata>
+  <groupId>com.google.code.jqwicket</groupId>
+  <artifactId>jqwicket</artifactId>
+  <version>0.6-SNAPSHOT</version>
+  <versioning>
+    <snapshot>
+      <timestamp>20110605.204807</timestamp>
+      <buildNumber>1</buildNumber>
+    </snapshot>
+    <lastUpdated>20110605204821</lastUpdated>
+  </versioning>
+</metadata>
