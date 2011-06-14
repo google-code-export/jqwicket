@@ -1,0 +1,50 @@
+#labels Featured
+*1. How to use JQWicket's Selector Builder API?*
+
+
+Use `com.google.code.jqwicket.api.S` to build jquery selector expressions.
+
+{{{
+import static com.google.code.jqwicket.api.JQuery.$f;
+import com.google.code.jqwicket.api.S;
+....
+
+final Component comp = ....; 
+final Component other = ....; 
+
+S.id(comp).to$().click(
+   $f(
+     S.id(other).to$().hide(),
+     S.clazz("a_css_class").attributeContains("href", "www").first().to$().show()
+   )
+);
+}}}
+
+*2. How to render javascript contributions at the bottom of markup with wicket?*
+
+Use Wicket's response decoration mechanism introduces since 1.4.17 (see wicket's "Resource Aggregation" examples).
+
+Find enclosed the simple usage example:
+
+- Add an `JavascriptFilteredIntoFooterHeaderResponse` to your `WebApplication`:
+
+{{{
+setHeaderResponseDecorator(new IHeaderResponseDecorator() {
+   public IHeaderResponse decorate(IHeaderResponse response) {
+      return new JavascriptFilteredIntoFooterHeaderResponse(
+                     response, "footerJS");
+   }
+});
+}}}
+
+- Add the placeholder for the javascript footer contributions to the html template:
+
+{{{
+<wicket:container wicket:id="footerJS"></wicket:container>
+}}}
+
+- Add `HeaderResponseFilteredResponseContainer` to your `WebPage`:
+
+{{{
+add(new HeaderResponseFilteredResponseContainer("footerJS", "footerJS"));
+}}}
