@@ -22,7 +22,7 @@ S.id(comp).to$().click(
 
 *2. How to render javascript contributions at the bottom of markup with wicket?*
 
-Use Wicket's response decoration mechanism introduces since 1.4.17 (see wicket's "Resource Aggregation" examples).
+Use Wicket's response decoration mechanism introduced since 1.4.17 (see wicket's "Resource Aggregation" examples).
 
 Find enclosed the simple usage example:
 
