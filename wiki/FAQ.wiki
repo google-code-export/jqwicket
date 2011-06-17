@@ -55,6 +55,21 @@ public class MyPanel extends Panel implements IJQHeaderContributor{
 }
 }}}
 
+Alternatively just add a 'JQBehavior' to your component:
+
+{{{
+
+JQBehavior behavior = new JQBehavior();
+behavior.addJsResourceUrls("js/myscript.js");
+behavior.addJQStatements(
+   S.id(this).to$().hide(),
+   S.clazz("some-css-class").to$().show()
+);
+
+Component comp = .... ;
+comp.add(behavior);
+}}}
+
 *4. How to render javascript contributions at the bottom of markup with wicket?*
 
 Use Wicket's response decoration mechanism introduced since 1.4.17 (see wicket's "Resource Aggregation" examples).
