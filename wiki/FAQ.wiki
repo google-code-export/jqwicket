@@ -31,7 +31,7 @@ S.id(comp).to$().click(
 );
 }}}
 
-*3. How to to render required jquery statements within `$(document).ready(..);` block for wicket component?
+*3. How to let wicket component to render required jquery statements within `$(document).ready(..);` block?
 
 Let your component implement `IJQHeaderContributor` interface.
 
