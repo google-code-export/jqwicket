@@ -1,6 +1,17 @@
 #labels Featured
-*1. How to use JQWicket's Selector Builder API?*
+*1. How to use JQuery in non conflict mode with JQWicket?*
 
+Use `JQContributionConfig` to configure JQuery's non-conflict alias.
+
+{{{
+JQContributionConfig config = new JQContributionConfig().enableNonConflictMode('jq');
+
+addPreComponentOnBeforeRenderListener(new JQComponentOnBeforeRenderListener(config));
+}}}
+
+This will use *`jq`* as alias for *`$`* in all your jquery statements.
+
+*2. How to use JQWicket's Selector Builder API?*
 
 Use `com.google.code.jqwicket.api.S` to build jquery selector expressions.
 
@@ -20,7 +31,31 @@ S.id(comp).to$().click(
 );
 }}}
 
-*2. How to render javascript contributions at the bottom of markup with wicket?*
+*3. How to to render required jquery statements within `$(document).ready(..);` block for wicket component?
+
+Let your component implement `IJQHeaderContributor` interface.
+
+{{{
+import com.google.code.jqwicket.api.S;
+import com.google.code.jqwicket.IJQHeaderContributor;
+
+public class MyPanel extends Panel implements IJQHeaderContributor{
+
+   ...
+
+   public void contribute(JQHeaderContributionTarget target) {
+      target.addJavascriptResourceUrls("js/myscript.js");
+      target.addJQStatements(
+         S.id(this).to$().hide(),
+         S.clazz("some-css-class").to$().show()
+   }
+
+   ...
+
+}
+}}}
+
+*4. How to render javascript contributions at the bottom of markup with wicket?*
 
 Use Wicket's response decoration mechanism introduced since 1.4.17 (see wicket's "Resource Aggregation" examples).
 
