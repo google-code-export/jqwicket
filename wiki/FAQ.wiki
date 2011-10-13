@@ -9,9 +9,13 @@ JQContributionConfig config = new JQContributionConfig().enableNonConflictMode('
 addPreComponentOnBeforeRenderListener(new JQComponentOnBeforeRenderListener(config));
 }}}
 
+*2. How to use JQuery API with JQWicket?*
+
+See `com.google.code.jqwicket.api.IJQStatement` for further details.
+
 This will use *`jq`* as alias for *`$`* in all your jquery statements.
 
-*2. How to use JQWicket's Selector Builder API?*
+*3. How to use JQWicket's Selector Builder API?*
 
 Use `com.google.code.jqwicket.api.S` to build jquery selector expressions.
 
@@ -31,7 +35,7 @@ S.id(comp).to$().click(
 );
 }}}
 
-*3. How to let wicket component render required jquery statements within `$(document).ready(...)` block?
+*4. How to let wicket component render required jquery statements within `$(document).ready(...)` block?
 
 Let your component implement `IJQHeaderContributor` interface.
 
@@ -70,7 +74,7 @@ Component comp = .... ;
 comp.add(behavior);
 }}}
 
-*4. How to render javascript contributions at the bottom of markup with wicket?*
+*5. How to render javascript contributions at the bottom of markup with wicket?*
 
 Use Wicket's response decoration mechanism introduced since 1.4.17 (see wicket's "Resource Aggregation" examples).
 
