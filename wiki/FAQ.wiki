@@ -9,11 +9,11 @@ JQContributionConfig config = new JQContributionConfig().enableNonConflictMode('
 addPreComponentOnBeforeRenderListener(new JQComponentOnBeforeRenderListener(config));
 }}}
 
+This will use *`jq`* as alias for *`$`* in all your jquery statements.
+
 *2. How to use JQuery API with JQWicket?*
 
 See `com.google.code.jqwicket.api.IJQStatement` for further details.
-
-This will use *`jq`* as alias for *`$`* in all your jquery statements.
 
 *3. How to use JQWicket's Selector Builder API?*
 
