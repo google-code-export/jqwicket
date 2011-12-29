@@ -1,3 +1,44 @@
+
+=== 12.06.2011 JQWicket 0.6 released. [http://code.google.com/p/jqwicket/downloads/detail?name=jqwicket-0.6-dist.zip Download distribution here] ===
+
+- Ground up refactoring of the existing JQuery API wrapper (see [http://code.google.com/p/jqwicket/source/browse/tags/jqwicket-0.6/src/main/java/com/google/code/jqwicket/api/IJQStatement.java IJQStatement], [http://code.google.com/p/jqwicket/source/browse/tags/jqwicket-0.6/src/main/java/com/google/code/jqwicket/api/IJQFunction.java IJQFunction], [http://code.google.com/p/jqwicket/source/browse/tags/jqwicket-0.6/src/main/java/com/google/code/jqwicket/api/IJQOptions.java IJQOptions] and  [http://code.google.com/p/jqwicket/source/browse/tags/jqwicket-0.6/src/main/java/com/google/code/jqwicket/api/JQLiteral.java JQLiteral] classes)
+
+- Added JQuery Selector Builder API (see [http://code.google.com/p/jqwicket/source/browse/tags/jqwicket-0.6/src/main/java/com/google/code/jqwicket/api/S.java com.google.code.jqwicket.api.S] class)
+
+- Upgraded JQuery to v.1.6.1 and JQueryUI to v.1.8.13
+
+- Added JQuery noConflict mode support (see [http://code.google.com/p/jqwicket/source/browse/tags/jqwicket-0.6/src/main/java/com/google/code/jqwicket/JQContributionConfig.java JQContributionConfig] class)
+
+- Added cookie support to the JQuery UI Tabs Behavior
+
+- Added possibility to render custom javascript / jquery statements outside the "documentReady" block
+
+=== 30.04.2011 JQWicket 0.5 released. [http://code.google.com/p/jqwicket/downloads/detail?name=jqwicket-0.5-dist.zip Download distribution here] ===
+
+- Package refactoring.. *{{{com.google.code.jqwicket}}}* is now the base package and maven's groupId
+
+- Upgraded JQuery to v.1.5.2 and JQueryUI to v.1.8.12
+
+- Upgraded Wicket to v.1.4.17
+
+- Added [http://jquery.malsup.com/block/ BlockUI JQuery plugin] implementation
+
+- Added [http://playground.mobily.pl/jquery/mobily-map.html/ Mobilymap JQuery plugin] implementation
+
+=== 12.02.2011 JQWicket 0.4 released. [http://code.google.com/p/jqwicket/downloads/detail?name=jqwicket-0.4-dist.zip Download distribution here] ===
+
+- Added [http://www.no-margin-for-errors.com/projects/prettypopin/ PrettyPopin JQuery plugin] implementation
+
+- Added [http://www.no-margin-for-errors.com/projects/prettycomments/ PrettyComments jquery plugin] implementation
+
+- Added [http://www.no-margin-for-errors.com/projects/prettyloader PrettyLoader plugin] implementation
+
+- Added [http://www.no-margin-for-errors.com/projects/prettygallery/ PrettyGallery plugin] implementation
+
+- Minor enhancements and bugfixes
+
+- Documentation
+
 === 28.12.2010 JQWicket 0.3 released. [http://code.google.com/p/jqwicket/downloads/detail?name=jqwicket-0.3-dist.zip Download distribution here] ===
 
 - Added [http://fancybox.net/ JQuery Fancybox plugin] implementation
