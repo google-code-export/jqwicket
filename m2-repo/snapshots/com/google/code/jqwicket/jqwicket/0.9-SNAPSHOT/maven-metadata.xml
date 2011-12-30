@@ -36,6 +36,12 @@
         <value>0.9-20111230.124746-1</value>
         <updated>20111230124746</updated>
       </snapshotVersion>
+      <snapshotVersion>
+        <classifier>sources</classifier>
+        <extension>jar.asc</extension>
+        <value>0.9-20111230.124746-1</value>
+        <updated>20111230124746</updated>
+      </snapshotVersion>
     </snapshotVersions>
   </versioning>
 </metadata>
