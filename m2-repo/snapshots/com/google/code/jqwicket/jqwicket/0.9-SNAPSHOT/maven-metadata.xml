@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata modelVersion="1.1.0">
+  <groupId>com.google.code.jqwicket</groupId>
+  <artifactId>jqwicket</artifactId>
+  <version>0.9-SNAPSHOT</version>
+  <versioning>
+    <snapshot>
+      <timestamp>20111230.124746</timestamp>
+      <buildNumber>1</buildNumber>
+    </snapshot>
+    <lastUpdated>20111230124746</lastUpdated>
+    <snapshotVersions>
+      <snapshotVersion>
+        <extension>jar</extension>
+        <value>0.9-20111230.124746-1</value>
+        <updated>20111230124746</updated>
+      </snapshotVersion>
+      <snapshotVersion>
+        <extension>pom</extension>
+        <value>0.9-20111230.124746-1</value>
+        <updated>20111230124746</updated>
+      </snapshotVersion>
+    </snapshotVersions>
+  </versioning>
+</metadata>
