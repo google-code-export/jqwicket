@@ -1,8 +1,9 @@
 package com.google.code.jqwicket.ui.ckeditor;
 
 import com.google.code.jqwicket.ui.GenericJQComponentBehavior;
+import org.apache.wicket.markup.head.IHeaderResponse;
+import org.apache.wicket.markup.head.JavaScriptHeaderItem;
 import org.apache.wicket.markup.html.IHeaderContributor;
-import org.apache.wicket.markup.html.IHeaderResponse;
 import org.apache.wicket.request.cycle.RequestCycle;
 import org.apache.wicket.request.resource.PackageResourceReference;
 import org.apache.wicket.request.resource.ResourceReference;
@@ -52,7 +53,8 @@ public class GenericCKEditorBehavior extends
                 .format("function CKEDITOR_GETURL(resource){\n"
                         + " return resource.indexOf('%s') >= 0 ? resource : '%s' + resource;\n"
                         + "}", baseUrl, baseUrl));
-        response.renderJavaScript(buf, UUID.randomUUID().toString());
+
+        response.render(JavaScriptHeaderItem.forScript(buf, UUID.randomUUID().toString()));
     }
 
 }

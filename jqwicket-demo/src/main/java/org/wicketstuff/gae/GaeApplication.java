@@ -1,6 +1,6 @@
 package org.wicketstuff.gae;
 
-import org.apache.wicket.pageStore.memory.DataStoreEvictionStrategy;
+import org.apache.wicket.pageStore.memory.IDataStoreEvictionStrategy;
 
 /**
  * @author mkalina
@@ -8,5 +8,5 @@ import org.apache.wicket.pageStore.memory.DataStoreEvictionStrategy;
  */
 public interface GaeApplication {
 
-    DataStoreEvictionStrategy getEvictionStrategy();
+    IDataStoreEvictionStrategy getEvictionStrategy();
 }

@@ -57,9 +57,9 @@ public class WicketApplication extends WebApplication {
         mountPage("blockui", BlockUIPage.class);
         mountPage("mobilymap", MobilyMapPage.class);
         mountPage("guider", GuiderPage.class);
-
         mountPage("dnd", DNDPage.class);
         mountPage("dnd2", DND2Page.class);
+
     }
 
     /**
@@ -68,5 +68,6 @@ public class WicketApplication extends WebApplication {
     public Class<GenericJQBehaviorPage> getHomePage() {
         return GenericJQBehaviorPage.class;
     }
+
 
 }

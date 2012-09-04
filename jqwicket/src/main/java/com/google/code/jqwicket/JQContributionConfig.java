@@ -37,18 +37,11 @@ public class JQContributionConfig implements Serializable {
         private static final long serialVersionUID = 1L;
     };
 
-    private static final CharSequence defaultJQueryCoreJsUrl = "http://ajax.googleapis.com/ajax/libs/" +
-            "jquery/1.7.1/jquery.min.js";
-
     private static final CharSequence defaultJQueryUiJsUrl = "http://ajax.googleapis.com/ajax/libs/" +
-            "jqueryui/1.8.16/jquery-ui.min.js";
+            "jqueryui/1.8.23/jquery-ui.min.js";
 
     private static final CharSequence defaultJQueryUiCssUrl = "http://ajax.googleapis.com/ajax/libs/" +
-            "jqueryui/1.8.16/themes/base/jquery-ui.css";
-
-    private CharSequence jqueryCoreJsUrl;
-
-    private JavaScriptResourceReference jqueryCoreJsResourceReference;
+            "jqueryui/1.8.23/themes/base/jquery-ui.css";
 
     private CharSequence jqueryUiJsUrl;
 
@@ -75,18 +68,6 @@ public class JQContributionConfig implements Serializable {
     }
 
     public JQContributionConfig() {
-        this.jqueryCoreJsUrl = defaultJQueryCoreJsUrl;
-    }
-
-    public JQContributionConfig(CharSequence jqueryCoreJsUrl) {
-        this.jqueryCoreJsResourceReference = null;
-        this.jqueryCoreJsUrl = jqueryCoreJsUrl;
-    }
-
-    public JQContributionConfig(
-            JavaScriptResourceReference jqueryCoreResourceReference) {
-        this.jqueryCoreJsResourceReference = jqueryCoreResourceReference;
-        this.jqueryCoreJsUrl = null;
     }
 
     public JQContributionConfig enableNonConflictMode(
@@ -166,14 +147,6 @@ public class JQContributionConfig implements Serializable {
     public JQContributionConfig renderCssResourceRefsBeforeUrls() {
         this.renderCssResourceRefsBeforeUrls = true;
         return this;
-    }
-
-    public CharSequence getJqueryCoreJsUrl() {
-        return jqueryCoreJsUrl;
-    }
-
-    public JavaScriptResourceReference getJqueryCoreJsResourceReference() {
-        return jqueryCoreJsResourceReference;
     }
 
     public CharSequence getJqueryUiJsUrl() {

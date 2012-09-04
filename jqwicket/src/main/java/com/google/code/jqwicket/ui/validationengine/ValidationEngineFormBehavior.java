@@ -23,7 +23,8 @@ import com.google.code.jqwicket.api.JQuery;
 import com.google.code.jqwicket.ui.JQComponentBehavior;
 import org.apache.wicket.Component;
 import org.apache.wicket.behavior.Behavior;
-import org.apache.wicket.markup.html.IHeaderResponse;
+import org.apache.wicket.markup.head.IHeaderResponse;
+import org.apache.wicket.markup.head.JavaScriptHeaderItem;
 import org.apache.wicket.markup.html.form.Form;
 
 import java.util.Collection;
@@ -85,7 +86,7 @@ public class ValidationEngineFormBehavior extends
 
                     @Override
                     public void renderHead(Component component, IHeaderResponse response) {
-                        response.renderJavaScript(r.getFuncDef(), UUID.randomUUID().toString());
+                        response.render(JavaScriptHeaderItem.forScript(r.getFuncDef(), UUID.randomUUID().toString()));
                     }
                 });
             }
