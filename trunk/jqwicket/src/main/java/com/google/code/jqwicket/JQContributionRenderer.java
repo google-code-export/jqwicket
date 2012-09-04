@@ -23,7 +23,10 @@ import org.apache.wicket.Component;
 import org.apache.wicket.MetaDataKey;
 import org.apache.wicket.behavior.Behavior;
 import org.apache.wicket.javascript.IJavaScriptCompressor;
-import org.apache.wicket.markup.html.IHeaderResponse;
+import org.apache.wicket.markup.head.CssHeaderItem;
+import org.apache.wicket.markup.head.IHeaderResponse;
+import org.apache.wicket.markup.head.JavaScriptHeaderItem;
+import org.apache.wicket.markup.head.OnDomReadyHeaderItem;
 import org.apache.wicket.request.cycle.RequestCycle;
 import org.apache.wicket.request.resource.CssResourceReference;
 import org.apache.wicket.request.resource.JavaScriptResourceReference;
@@ -103,11 +106,13 @@ public class JQContributionRenderer extends Behavior {
         this.renderJavaScriptOutsideDocumentReady(response, target.getJQStatementsOutsideDocumentReady());
 
         // 2. render resources from global config
-        this.renderJsResources(response,
-                Arrays.asList(config.getJqueryCoreJsUrl()), Arrays.asList(config.getJqueryCoreJsResourceReference()));
-        this.renderJsResources(response,
+        response.render(JavaScriptHeaderItem.forReference(Application.get()
+                .getJavaScriptLibrarySettings()
+                .getJQueryReference()));
+
+        renderJsResources(response,
                 Arrays.asList(config.getJqueryUiJsUrl()), Arrays.asList(config.getJqueryUiJsResourceReference()));
-        this.renderCssResources(response,
+        renderCssResources(response,
                 Arrays.asList(config.getJqueryUiCssUrl()), Arrays.asList(config.getJqueryUiCssResourceReference()));
 
 
@@ -149,20 +154,20 @@ public class JQContributionRenderer extends Behavior {
 
     private void renderJsResourcesUrls(IHeaderResponse response, Collection<CharSequence> resources) {
         for (CharSequence url : resources) {
-            response.renderJavaScriptReference(determineResourcesUrl(url));
+            response.render(JavaScriptHeaderItem.forUrl(determineResourcesUrl(url)));
         }
     }
 
     private void renderJsResourcesRefs(IHeaderResponse response, Collection<JavaScriptResourceReference> resources) {
         for (JavaScriptResourceReference ref : resources) {
             if (ref != null)
-                response.renderJavaScriptReference(ref);
+                response.render(JavaScriptHeaderItem.forReference(ref));
         }
     }
 
     private void renderCssResourcesUrls(IHeaderResponse response, Collection<CharSequence> resources) {
         for (CharSequence url : resources) {
-            response.renderCSSReference(determineResourcesUrl(url));
+            response.render(CssHeaderItem.forUrl(determineResourcesUrl(url)));
         }
     }
 
@@ -170,7 +175,7 @@ public class JQContributionRenderer extends Behavior {
     private void renderCssResourcesRefs(IHeaderResponse response, Collection<CssResourceReference> resources) {
         for (CssResourceReference ref : resources) {
             if (ref != null)
-                response.renderCSSReference(ref);
+                response.render(CssHeaderItem.forReference(ref));
         }
     }
 
@@ -197,7 +202,7 @@ public class JQContributionRenderer extends Behavior {
         for (IJQStatement s : statements) {
             buf.append(s);
         }
-        response.renderJavaScript(compressJavaScript(buf), UUID.randomUUID().toString());
+        response.render(JavaScriptHeaderItem.forScript(compressJavaScript(buf), UUID.randomUUID().toString()));
     }
 
     private void renderJavaScriptInsideDocumentReady(IHeaderResponse response, Collection<IJQStatement> statements) {
@@ -216,7 +221,7 @@ public class JQContributionRenderer extends Behavior {
         script.append(compressJavaScript(JQuery.documentReady(statements)));
 
         if (Utils.isNotBlank(script))
-            response.renderOnDomReadyJavaScript(script.toString());
+            response.render(OnDomReadyHeaderItem.forScript(script.toString()));
     }
 
     private CharSequence compressJavaScript(CharSequence script) {

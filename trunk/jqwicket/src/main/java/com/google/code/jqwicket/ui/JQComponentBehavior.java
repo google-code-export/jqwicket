@@ -26,6 +26,7 @@ import com.google.code.jqwicket.api.IJQStatement;
 import org.apache.wicket.Component;
 import org.apache.wicket.Page;
 import org.apache.wicket.ajax.AjaxRequestTarget;
+import org.apache.wicket.request.cycle.RequestCycle;
 import org.apache.wicket.request.resource.JavaScriptResourceReference;
 
 import static com.google.code.jqwicket.api.JQuery.$;
@@ -100,12 +101,14 @@ public abstract class JQComponentBehavior<T extends IJQOptions<T>> extends
     public void beforeRender(Component component) {
         super.beforeRender(component);
 
-        if (AjaxRequestTarget.get() != null) {
+        AjaxRequestTarget target = RequestCycle.get().find(AjaxRequestTarget.class);
+
+        if (target != null) {
             JQHeaderContributionTarget ajaxTarget = new JQHeaderContributionTarget();
             contributeInternal(ajaxTarget);
             for (IJQStatement s : ajaxTarget
                     .getJQStatementsInsideDocumentReady()) {
-                AjaxRequestTarget.get().appendJavaScript(String.valueOf(s));
+                target.appendJavaScript(String.valueOf(s));
             }
         }
     }
